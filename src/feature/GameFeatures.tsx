@@ -9,35 +9,38 @@ const GameFeatures = () => {
   const features = [
     {
       icon: <FaStar className="size-12" />,
-      title: 'Rare Shiny Pokemon Collection',
+      title: 'Shiny Greninja & Giratina Collection',
       description:
-        'Hunt and collect rare shiny Pokemon including Greninja, Ceruledge, and Hisuian Zoroark.',
-      stats: '6000+ Shinies Available',
+        'Hunt legendary shinies like Greninja, Giratina, and Ceruledge. Join 40,000+ trainers in collecting 6,000+ rare Pokemon variants.',
+      stats: '40,500+ Active Trainers',
       gradient: 'from-yellow-400 via-amber-400 to-orange-500',
       textColor: 'text-amber-400',
     },
     {
       icon: <FaBolt className="size-12" />,
-      title: 'Revolutionary Fusion Mechanics',
+      title: 'Pokemon Fusion System',
       description:
-        'Create unique Pokemon combinations with our innovative fusion system.',
-      stats: '4400+ Fusion Combinations',
+        'Create powerful combinations with our innovative fusion poke system. Discover unique evolution paths for Totodile and other Pokemon.',
+      stats: '4,400+ Fusion Combinations',
       gradient: 'from-blue-400 via-indigo-400 to-purple-500',
       textColor: 'text-blue-400',
     },
     {
       icon: <FaGamepad className="size-12" />,
-      title: 'Strategic Battle Zones',
+      title: 'Real-time Strategy Battles',
       description:
-        'Engage in tactical battles across multiple battle zones with real-time strategy.',
-      stats: '2400+ Daily Battles',
+        'Engage in tactical card battles across multiple zones. Master type advantages and special abilities in real-time combat.',
+      stats: '27,100+ Daily Battles',
       gradient: 'from-emerald-400 via-green-400 to-teal-500',
       textColor: 'text-emerald-400',
     },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#1A237E] py-16">
+    <section
+      id="features"
+      className="relative overflow-hidden bg-[#1A237E] py-16"
+    >
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-20" />
 
@@ -56,26 +59,26 @@ const GameFeatures = () => {
         {/* Features Grid */}
         <div className="grid gap-8 md:grid-cols-3">
           {features.map((feature, index) => (
-            <div key={index} className="group">
+            <div key={index} className="group h-full">
               {/* Card */}
-              <div className="relative rounded-2xl bg-gray-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-gray-800/70">
+              <div className="relative flex h-full flex-col rounded-2xl bg-gray-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-gray-800/70">
                 {/* Icon */}
                 <div
-                  className={`mb-6 ${feature.textColor} transition-transform duration-300 group-hover:scale-110`}
+                  className={`mb-4 ${feature.textColor} transition-transform duration-300 group-hover:scale-110`}
                 >
                   {feature.icon}
                 </div>
 
                 {/* Content */}
-                <h3 className="mb-3 text-2xl font-bold text-white">
+                <h3 className="mb-2 text-2xl font-bold text-white">
                   {feature.title}
                 </h3>
-                <p className="mb-6 text-lg text-gray-300/80">
+                <p className="mb-4 grow text-lg text-gray-300/80">
                   {feature.description}
                 </p>
 
                 {/* Stats */}
-                <div className="mt-auto">
+                <div>
                   <span
                     className={`text-lg font-semibold ${feature.textColor}`}
                   >

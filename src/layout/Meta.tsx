@@ -2,15 +2,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 
-import { AppConfig } from '../utils/AppConfig';
+import { AppConfig } from '@/utils/AppConfig';
 
-type IMetaProps = {
-  title: string;
-  description: string;
-  canonical?: string;
-};
-
-const Meta = (props: IMetaProps) => {
+const Meta = () => {
   const router = useRouter();
 
   return (
@@ -22,41 +16,27 @@ const Meta = (props: IMetaProps) => {
           content="width=device-width,initial-scale=1"
           key="viewport"
         />
-        <link
-          rel="apple-touch-icon"
-          href={`${router.basePath}/apple-touch-icon.png`}
-          key="apple"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href={`${router.basePath}/favicon-32x32.png`}
-          key="icon32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href={`${router.basePath}/favicon-16x16.png`}
-          key="icon16"
-        />
-        <link
-          rel="icon"
-          href={`${router.basePath}/favicon.ico`}
-          key="favicon"
-        />
+        <link rel="icon" type="image/svg+xml" href={AppConfig.logoPath} />
+        <link rel="apple-touch-icon" href={AppConfig.logoPath} />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <NextSeo
-        title={props.title}
-        description={props.description}
-        canonical={props.canonical}
+        title={AppConfig.title}
+        description={AppConfig.description}
+        canonical={`${router.basePath}${router.asPath}`}
         openGraph={{
-          title: props.title,
-          description: props.description,
-          url: props.canonical,
-          locale: AppConfig.locale,
+          title: AppConfig.title,
+          description: AppConfig.description,
+          url: `${router.basePath}${router.asPath}`,
           site_name: AppConfig.site_name,
+          images: [
+            {
+              url: AppConfig.logoPath,
+              width: 512,
+              height: 512,
+              alt: 'PokeRogue Logo',
+            },
+          ],
         }}
       />
     </>

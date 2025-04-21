@@ -18,13 +18,13 @@ type HeroContentProps = {
  */
 export const HeroContent = ({ stats }: HeroContentProps): JSX.Element => {
   return (
-    <div className="relative z-10 -mt-8 flex w-full flex-col items-center overflow-hidden">
+    <div className="relative z-10 mt-8 flex w-full flex-col items-center overflow-hidden">
       {/* Background Gradient Animation */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 opacity-50" />
       <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-20" />
 
       {/* First Screen Content */}
-      <div className="relative flex w-full max-w-[1440px] flex-col items-center gap-8 px-4 pt-4">
+      <div className="relative flex w-full max-w-[1440px] flex-col items-center gap-8 px-4 pt-12">
         {/* Top Content: Title Area */}
         <div className="flex w-full flex-col items-center space-y-4">
           {/* Main Title Area */}
@@ -59,16 +59,27 @@ export const HeroContent = ({ stats }: HeroContentProps): JSX.Element => {
         <div className="group relative -mt-4 w-full max-w-[1600px]">
           {/* Game Screenshot Container */}
           <div className="relative">
-            {/* Main Image */}
-            <img
-              src="/assets/images/game-preview.png"
-              alt="Pokemon battle interface showing Charmander vs Cyndaquil"
-              className="relative z-10 h-auto w-full object-cover"
-            />
+            {/* Background Grid with reduced contrast */}
+            <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-10" />
 
-            {/* Corner Glows */}
-            <div className="absolute left-0 top-0 size-48 bg-gradient-to-br from-blue-500/20 to-transparent" />
-            <div className="absolute bottom-0 right-0 size-48 bg-gradient-to-tl from-purple-500/20 to-transparent" />
+            {/* Dialog Box Overlay - semi-transparent dark backdrop */}
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-black/30 backdrop-blur-sm" />
+
+            {/* Main Image with rounded corners */}
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="/assets/images/game-preview.png"
+                alt="Pokemon battle interface showing Charmander vs Cyndaquil"
+                className="relative z-10 h-auto w-full object-cover"
+              />
+
+              {/* Status Bar Overlay - reduced opacity */}
+              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/20 to-transparent backdrop-blur-[2px]" />
+            </div>
+
+            {/* Corner Glows with adjusted opacity */}
+            <div className="absolute left-0 top-0 size-48 bg-gradient-to-br from-blue-500/10 to-transparent" />
+            <div className="absolute bottom-0 right-0 size-48 bg-gradient-to-tl from-purple-500/10 to-transparent" />
 
             {/* Centered Play Button */}
             <div className="absolute inset-0 z-30 flex items-center justify-center">
@@ -115,54 +126,84 @@ export const HeroContent = ({ stats }: HeroContentProps): JSX.Element => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/20 to-transparent" />
 
         {/* Content Container */}
-        <div className="relative z-20 mx-auto w-full max-w-[800px] px-8 py-12">
+        <div className="relative z-20 mx-auto w-full max-w-[1200px] px-8 py-16">
           {/* Title with Separators */}
-          <div className="mb-12 flex w-full items-center space-x-6">
+          <div className="mb-16 flex w-full items-center space-x-6">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-200/20 to-transparent" />
-            <h3 className="whitespace-nowrap px-4 text-xl font-medium text-gray-200/90">
+            <h3 className="whitespace-nowrap px-4 text-2xl font-medium text-gray-200/90">
               Game Stats
             </h3>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-200/20 to-transparent" />
           </div>
 
           {/* Stats Cards */}
-          <div className="flex justify-center gap-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
             {[
               {
-                label: 'Trainers',
+                label: 'Active Trainers',
                 value: stats.trainers.toLocaleString(),
                 icon: '👥',
                 color: 'from-blue-500 to-cyan-500',
+                description: 'Daily active players worldwide',
               },
               {
-                label: 'Battles',
+                label: 'Daily Battles',
                 value: stats.battles.toLocaleString(),
                 icon: '⚔️',
                 color: 'from-red-500 to-orange-500',
+                description: 'Tactical battles fought each day',
               },
               {
-                label: 'Shinies',
-                value: stats.shinies.toLocaleString(),
+                label: 'Shiny Variants',
+                value: '6,000+',
                 icon: '✨',
                 color: 'from-yellow-500 to-amber-500',
+                description: 'Unique shiny Pokemon to collect',
+              },
+              {
+                label: 'Fusion Combos',
+                value: '4,400+',
+                icon: '🔮',
+                color: 'from-purple-500 to-pink-500',
+                description: 'Possible Pokemon combinations',
+              },
+              {
+                label: 'Rare Collection',
+                value: '2,200+',
+                icon: '💎',
+                color: 'from-emerald-500 to-teal-500',
+                description: 'Special items and artifacts',
               },
             ].map((stat, index) => (
               <div
                 key={index}
-                className="perspective-1000 group w-[120px] cursor-default"
+                className="perspective-1000 group cursor-default"
               >
-                <div className="group-hover:rotate-y-12 relative flex h-full flex-col items-center justify-center rounded-lg border border-white/10 bg-black/40 py-4 backdrop-blur-md transition-all duration-500 group-hover:scale-105">
+                <div className="group-hover:rotate-y-12 relative flex h-full flex-col items-center justify-center rounded-xl border border-white/10 bg-black/40 p-6 backdrop-blur-md transition-all duration-500 group-hover:scale-105">
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-lg opacity-10 transition-opacity duration-500 group-hover:opacity-20`}
+                    className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-xl opacity-10 transition-opacity duration-500 group-hover:opacity-20`}
                   />
-                  <div className="mb-2 text-2xl">{stat.icon}</div>
-                  <p className="bg-gradient-to-br from-white to-gray-300 bg-clip-text text-lg font-bold leading-none text-white">
+                  {/* Icon with Glow */}
+                  <div className="relative mb-4">
+                    <div
+                      className={`absolute -inset-2 bg-gradient-to-br ${stat.color} rounded-full opacity-30 blur-lg transition-opacity duration-500 group-hover:opacity-50`}
+                    />
+                    <div className="relative text-4xl">{stat.icon}</div>
+                  </div>
+                  {/* Value */}
+                  <p className="bg-gradient-to-br from-white to-gray-300 bg-clip-text text-2xl font-bold leading-none text-transparent">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm leading-none text-gray-300/90">
+                  {/* Label */}
+                  <p className="mt-2 text-base font-medium text-gray-300/90">
                     {stat.label}
                   </p>
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-white/5 to-white/0 opacity-0 transition-all duration-500 group-hover:opacity-100" />
+                  {/* Description */}
+                  <p className="mt-2 text-center text-sm text-gray-400/80">
+                    {stat.description}
+                  </p>
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-white/0 opacity-0 transition-all duration-500 group-hover:opacity-100" />
                 </div>
               </div>
             ))}
