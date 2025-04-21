@@ -8,24 +8,24 @@ type ICTABannerProps = {
 };
 
 const CTABanner = (props: ICTABannerProps) => (
-  <div className="relative overflow-hidden">
+  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
     {/* Background with grid and gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-blue-900/90 to-indigo-900/90" />
-    <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-20" />
+    <div className="absolute inset-0 bg-black/20" />
+    <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-5" />
 
     {/* Glowing orbs */}
-    <div className="absolute -left-20 -top-20 size-40 animate-pulse-soft rounded-full bg-purple-500/20 blur-3xl" />
-    <div className="absolute -bottom-20 -right-20 size-40 animate-pulse-soft rounded-full bg-blue-500/20 blur-3xl" />
+    <div className="absolute -left-20 -top-20 size-40 animate-pulse-soft rounded-full bg-purple-500/5 blur-3xl" />
+    <div className="absolute -bottom-20 -right-20 size-40 animate-pulse-soft rounded-full bg-blue-500/5 blur-3xl" />
 
     {/* Content container */}
-    <div className="relative py-16">
+    <div className="relative z-20 px-8 py-16">
       <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
         {/* Text content */}
         <div className="flex-1 text-center md:text-left">
-          <h2 className="mb-6 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+          <h2 className="relative mb-6 text-4xl font-bold text-white drop-shadow-lg md:text-5xl">
             {props.title}
           </h2>
-          <p className="text-xl leading-relaxed text-gray-300/90">
+          <p className="relative text-xl font-medium leading-relaxed text-gray-100 drop-shadow md:max-w-2xl">
             {props.subtitle}
           </p>
         </div>
@@ -33,7 +33,7 @@ const CTABanner = (props: ICTABannerProps) => (
         {/* CTA Button */}
         <div className="relative">
           <div className="absolute -inset-1.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 opacity-25 blur transition duration-300 group-hover:opacity-100" />
-          <div className="relative">{props.button}</div>
+          <div className="relative z-10">{props.button}</div>
 
           {/* Decorative icons */}
           <FaGamepad className="absolute -right-6 -top-6 size-8 animate-float text-blue-400/30" />

@@ -13,7 +13,7 @@ const Hero = () => (
     <div className="relative min-h-screen">
       <BackgroundEffect />
 
-      <Section yPadding="py-6">
+      <Section yPadding="py-4">
         <NavbarTwoColumns logo={<Logo xl />}>
           <li>
             <Link
@@ -34,7 +34,7 @@ const Hero = () => (
         </NavbarTwoColumns>
       </Section>
 
-      <Section yPadding="pt-20 pb-32">
+      <Section yPadding="pt-12 pb-8">
         <HeroContent
           stats={{
             trainers: 40500,

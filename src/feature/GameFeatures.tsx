@@ -37,14 +37,14 @@ const GameFeatures = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#1A237E] py-32">
+    <section className="relative overflow-hidden bg-[#1A237E] py-16">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-20" />
 
       <div className="container relative mx-auto px-4">
         {/* Section Header */}
-        <div className="mb-24 text-center">
-          <h2 className="mb-6 text-5xl font-bold text-white lg:text-6xl">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-5xl font-bold text-white lg:text-6xl">
             Core Game Features
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-300/90">

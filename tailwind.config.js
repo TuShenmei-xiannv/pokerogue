@@ -1,5 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -56,6 +62,7 @@ module.exports = {
         'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
         float: 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'button-breath': 'breathe 2s ease-in-out infinite',
       },
       keyframes: {
         gradient: {
@@ -117,6 +124,10 @@ module.exports = {
           '50%': {
             opacity: 0.6,
           },
+        },
+        breathe: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.2)' },
         },
       },
       backgroundImage: {
