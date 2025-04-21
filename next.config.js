@@ -15,7 +15,7 @@ const nextConfig = {
   // So, the source code is "basePath-ready".
   // You can remove `basePath` if you don't need it.
   reactStrictMode: false,
-  output: 'standalone',
+  output: 'export',
   images: {
     unoptimized: true,
   },
