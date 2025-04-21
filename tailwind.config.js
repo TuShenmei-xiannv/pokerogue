@@ -62,7 +62,8 @@ module.exports = {
         'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
         float: 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out infinite 2s',
-        'button-breath': 'breathe 2s ease-in-out infinite',
+        breath: 'breath 2s ease-in-out infinite',
+        'button-glow': 'button-glow 2s ease-in-out infinite',
       },
       keyframes: {
         gradient: {
@@ -111,23 +112,45 @@ module.exports = {
         },
         glow: {
           '0%, 100%': {
-            filter: 'brightness(1)',
+            opacity: 0.5,
+            transform: 'scale(1)',
           },
           '50%': {
-            filter: 'brightness(1.2)',
+            opacity: 1,
+            transform: 'scale(1.1)',
           },
         },
         'pulse-soft': {
           '0%, 100%': {
-            opacity: 1,
+            opacity: 0.3,
+            transform: 'scale(1)',
           },
           '50%': {
             opacity: 0.6,
+            transform: 'scale(1.05)',
           },
         },
-        breathe: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.2)' },
+        breath: {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            filter: 'brightness(1)',
+          },
+          '50%': {
+            transform: 'scale(1.1)',
+            filter: 'brightness(1.2)',
+          },
+        },
+        'button-glow': {
+          '0%, 100%': {
+            filter:
+              'brightness(1) drop-shadow(0 0 8px rgba(59, 130, 246, 0.6))',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            filter:
+              'brightness(1.3) drop-shadow(0 0 15px rgba(59, 130, 246, 0.8))',
+            transform: 'scale(1.05)',
+          },
         },
       },
       backgroundImage: {

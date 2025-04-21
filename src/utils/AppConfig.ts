@@ -1,11 +1,13 @@
 export const AppConfig = {
   site_name: 'PokeRogue',
-  title: 'PokeRogue - Your Pokemon Adventure Begins',
+  title:
+    'PokeRogue - Innovative Pokemon Card Strategy Game | Shiny Collection | Online Battles',
   description:
-    'Experience the thrill of Pokemon battles and rare collection in this innovative web-based game. Featuring unique fusion mechanics and strategic gameplay.',
+    "Experience PokeRogue's unique Pokemon card strategy game. Collect rare shiny Pokemon, engage in real-time battles, and master the fusion system. Start your free adventure now!",
   locale: 'en',
-  mainGameUrl: 'https://play.pokerogue.com',
+  siteUrl: 'https://pokeroguegame.online',
+  gameUrl: 'https://pokerogue.net',
   keywords:
-    'Pokemon, Rogue-like, Web Game, Pokemon Fusion, Online Game, Free to Play, Browser Game',
+    'giratina, shiny greninja, poke zone, fusion poke, shiny ceruledge, lucky u cycles',
   logoPath: '/logo.svg',
 };

@@ -19,12 +19,14 @@ const Hero = () => (
       <Section yPadding="py-4">
         <NavbarTwoColumns logo={<Logo xl />}>
           <li>
-            <Link
-              href={AppConfig.mainGameUrl}
+            <a
+              href={AppConfig.gameUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-200 transition-colors hover:text-game-accent"
             >
               Play Now
-            </Link>
+            </a>
           </li>
           <li>
             <Link

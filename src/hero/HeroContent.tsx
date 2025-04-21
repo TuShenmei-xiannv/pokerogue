@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 
 import { AppConfig } from '../utils/AppConfig';
@@ -83,26 +82,18 @@ export const HeroContent = ({ stats }: HeroContentProps): JSX.Element => {
 
             {/* Centered Play Button */}
             <div className="absolute inset-0 z-30 flex items-center justify-center">
-              <Link href={AppConfig.mainGameUrl}>
-                <div className="relative animate-button-breath">
-                  {/* Outer Glow */}
-                  <div className="absolute -inset-4 animate-pulse-soft rounded-full bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 blur-xl" />
-                  {/* Inner Glow */}
-                  <div className="absolute -inset-2 animate-glow rounded-full bg-gradient-to-r from-blue-400/40 via-purple-400/40 to-pink-400/40 blur-md" />
-
-                  <button className="relative rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 px-24 py-6 shadow-lg">
-                    {/* Button Content */}
-                    <span className="relative block text-3xl font-bold text-white">
-                      Play Now
-                      {/* Text Glow */}
-                      <span className="absolute inset-0 rounded-full bg-white/20 blur-sm" />
-                    </span>
-
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/0 via-purple-600/50 to-pink-600/0 opacity-0 transition-opacity duration-300 hover:opacity-100" />
-                  </button>
-                </div>
-              </Link>
+              <a
+                href={AppConfig.gameUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center"
+              >
+                <div className="absolute -inset-4 animate-pulse-soft rounded-full bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 blur-xl group-hover:animate-none" />
+                <div className="absolute -inset-2 animate-glow rounded-full bg-gradient-to-r from-blue-400/40 via-purple-400/40 to-pink-400/40 blur-md group-hover:animate-none" />
+                <button className="relative animate-button-glow rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  Play Now
+                </button>
+              </a>
             </div>
           </div>
 
