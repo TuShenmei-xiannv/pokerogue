@@ -37,14 +37,14 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="relative z-10 bg-[#1A237E] py-16">
+    <section id="faq" className="relative z-10 bg-[#1A237E] py-12">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-20" />
 
       <div className="container relative z-20 mx-auto px-4">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-5xl font-bold text-white lg:text-6xl">
+          <h2 className="mb-4 text-3xl font-bold text-white lg:text-4xl">
             Frequently Asked Questions
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-300/90">
@@ -54,7 +54,7 @@ const FAQ = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="relative z-30 grid gap-4 pb-8">
+        <div className="relative z-30 grid gap-2 pb-8">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -64,7 +64,7 @@ const FAQ = () => {
                 className="flex w-full items-center justify-between p-6 text-left hover:bg-gray-800"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-lg font-semibold text-white">
                   {faq.question}
                 </h3>
                 <FaChevronDown
@@ -78,7 +78,7 @@ const FAQ = () => {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <p className="whitespace-pre-line px-6 pb-6 text-lg text-gray-300/90">
+                <p className="whitespace-pre-line px-6 pb-6 text-base text-gray-400">
                   {faq.answer}
                 </p>
               </div>

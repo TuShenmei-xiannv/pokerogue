@@ -3,7 +3,7 @@ import { Section } from '../layout/Section';
 import { AppConfig } from '../utils/AppConfig';
 
 const Banner = () => (
-  <Section>
+  <Section yPadding="py-4">
     <CTABanner
       title="Ready to Begin Your Pokemon Adventure?"
       subtitle="Join thousands of trainers in the most innovative Pokemon card game. Experience epic battles, rare collections, and unique fusion mechanics!"

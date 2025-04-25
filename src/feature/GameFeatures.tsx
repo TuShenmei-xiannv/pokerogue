@@ -39,7 +39,7 @@ const GameFeatures = () => {
   return (
     <section
       id="features"
-      className="relative overflow-hidden bg-[#1A237E] py-16"
+      className="relative overflow-hidden bg-[#1A237E] py-12"
     >
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[url('/assets/images/grid.png')] bg-repeat opacity-20" />
@@ -47,10 +47,10 @@ const GameFeatures = () => {
       <div className="container relative mx-auto px-4">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 text-5xl font-bold text-white lg:text-6xl">
+          <h2 className="mb-4 text-3xl font-bold text-white lg:text-4xl">
             Core Game Features
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-300/90">
+          <p className="mx-auto text-xl text-gray-300/90">
             Experience the next evolution of Pokemon gaming with our innovative
             features and mechanics
           </p>
@@ -70,17 +70,17 @@ const GameFeatures = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="mb-2 text-2xl font-bold text-white">
+                <h3 className="mb-2 text-xl font-bold text-white">
                   {feature.title}
                 </h3>
-                <p className="mb-4 grow text-lg text-gray-300/80">
+                <p className="mb-4 grow text-base text-gray-300/80">
                   {feature.description}
                 </p>
 
                 {/* Stats */}
                 <div>
                   <span
-                    className={`text-lg font-semibold ${feature.textColor}`}
+                    className={`text-base font-semibold ${feature.textColor}`}
                   >
                     {feature.stats}
                   </span>

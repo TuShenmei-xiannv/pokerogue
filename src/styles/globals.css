@@ -23,7 +23,7 @@
   }
 
   .animate-breath {
-    animation: breath 1.5s ease-in-out infinite;
+    animation: breath 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     transform-origin: center;
     will-change: transform;
   }
@@ -75,8 +75,10 @@
 @keyframes breath {
   0%, 100% {
     transform: scale(0.95);
+    filter: brightness(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.15);
+    filter: brightness(1.2);
   }
 } 

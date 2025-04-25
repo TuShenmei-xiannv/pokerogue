@@ -18,14 +18,14 @@ const CTABanner = (props: ICTABannerProps) => (
     <div className="absolute -bottom-20 -right-20 size-40 animate-pulse-soft rounded-full bg-blue-500/5 blur-3xl" />
 
     {/* Content container */}
-    <div className="relative z-20 px-8 py-16">
+    <div className="relative z-20 px-8 py-12">
       <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
         {/* Text content */}
         <div className="flex-1 text-center md:text-left">
-          <h2 className="relative mb-6 text-4xl font-bold text-white drop-shadow-lg md:text-5xl">
+          <h2 className="relative mb-6 text-2xl font-bold text-white drop-shadow-lg md:text-2xl">
             {props.title}
           </h2>
-          <p className="relative text-xl font-medium leading-relaxed text-gray-100 drop-shadow md:max-w-2xl">
+          <p className="relative text-lg font-medium leading-relaxed text-gray-100 drop-shadow md:max-w-2xl">
             {props.subtitle}
           </p>
         </div>

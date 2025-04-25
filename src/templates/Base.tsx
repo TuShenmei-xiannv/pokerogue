@@ -37,8 +37,8 @@ const Base = () => (
         </div>
       </section>
 
-      {/* Banner Section */}
-      <section className="relative py-12">
+      {/* Banner Section - Reduced padding */}
+      <section className="relative py-4">
         {/* Top decorative elements */}
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#1A237E]/90 to-transparent backdrop-blur-sm"></div>
         <div className="absolute inset-x-0 top-0 flex justify-center">
